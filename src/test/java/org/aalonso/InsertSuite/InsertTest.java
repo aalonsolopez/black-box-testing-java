@@ -7,8 +7,10 @@ import com.exceptions.DepthException;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 
 public class InsertTest {
@@ -40,5 +42,13 @@ public class InsertTest {
             Node<Integer> node = tree.search(2500);
             assertNotNull(node);
         }
+    }
+
+    @ParameterizedTest
+    @ValueSource(booleans = { true, false })
+    public void testInsertOtherValueNotInteger(boolean recursive) throws DepthException {
+        BST<String> tree = new BST<>();
+        
+        assertThrows(IllegalArgumentException.class, () -> tree.insert("hola", true));
     }
 }
