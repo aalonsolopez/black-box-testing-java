@@ -6,7 +6,7 @@ import org.junit.platform.suite.api.SuiteDisplayName;
 
 @Suite
 @SuiteDisplayName("BST Test Suite")
-@SelectPackages("org.aalonso.InsertSuite")
+@SelectPackages("org.aalonso")
 public class TestSuiteBST {
 
 }

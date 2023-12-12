@@ -7,7 +7,6 @@ import com.exceptions.DepthException;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -15,7 +14,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class InsertTest {
     @ParameterizedTest
-    @CsvFileSource(resources = "/values.csv", numLinesToSkip = 1, lineSeparator = "\n", delimiter = ',')
+    @CsvFileSource(resources = "/insertSuiteResources/values.csv", numLinesToSkip = 1, lineSeparator = "\n", delimiter = ',')
     public void testInsertLimitValues(int content, boolean recursive, int depth) throws DepthException {
         BST<Integer> tree = new BST<Integer>();
         if (content >= -2500 && content <= 2500) {
@@ -28,7 +27,7 @@ public class InsertTest {
     }
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/values.csv", numLinesToSkip = 1, lineSeparator = "\n", delimiter = ',')
+    @CsvFileSource(resources = "/insertSuiteResources/values.csv", numLinesToSkip = 1, lineSeparator = "\n", delimiter = ',')
     public void testInsertLimitDepth(int content, boolean recursive, int depth) throws DepthException {
         BST<Integer> tree = new BST<Integer>();
         int startingValue = 0;
